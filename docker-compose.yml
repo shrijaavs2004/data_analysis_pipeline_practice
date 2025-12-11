@@ -1,0 +1,14 @@
+services:
+  ia4:
+    image: skysheng7/ia4:62faa96
+    volumes:
+      - .:/workspace
+    working_dir: /workspace  # Add this line
+    stdin_open: true  # equivalent to -i
+    tty: true         # equivalent to -t
+    command: /bin/bash
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+    platform: linux/amd64
